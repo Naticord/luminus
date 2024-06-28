@@ -1,2 +1,2 @@
-# luminus
-cool discord client
+# Luminus
+:trollface:
