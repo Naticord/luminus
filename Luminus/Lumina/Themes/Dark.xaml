@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="InputHighlightBackground">#3D414D</Color>
+    
+    <Color x:Key="Background">#1F272D</Color>
+    
+    <Color x:Key="Background2">#2E323E</Color>
+    
+    <Color x:Key="Foreground">#97999F</Color>
+    
+    <Color x:Key="ForegroundLumina">#FFF</Color>
+    
+    <Color x:Key="InputBackground">#2E323E</Color>
+
+    <Color x:Key="InputBackground2">#3E424E</Color>
+
+
+    <SolidColorBrush x:Key="InputHighlightBackgroundBrush" Color="{StaticResource InputHighlightBackground}"/>
+    
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
+    
+    <SolidColorBrush x:Key="Background2Brush" Color="{StaticResource Background2}"/>
+    
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource Foreground}"/>
+    
+    <SolidColorBrush x:Key="ForegroundLuminaBrush" Color="{StaticResource ForegroundLumina}"/>
+    
+    <SolidColorBrush x:Key="InputBackgroundBrush" Color="{StaticResource InputBackground}"/>
+    
+    <SolidColorBrush x:Key="InputBackground2Brush" Color="{StaticResource InputBackground2}"/>
+
+</ResourceDictionary>

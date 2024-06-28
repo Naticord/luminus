@@ -1,0 +1,59 @@
+﻿<Window x:Class="Lumina.XAMLs.Client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lumina.XAMLs"
+        mc:Ignorable="d"
+        Title="Client" WindowStyle="None" MaxHeight="1054" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Height="480" Width="850" Background="{x:Null}">
+    <Grid>
+        <Border BorderThickness="0,0,0,2" BorderBrush="{DynamicResource InputBackgroundBrush}" VerticalAlignment="Top" Height="35">
+            <Grid x:Name="TopPanel" Background="{StaticResource BackgroundBrush}" 
+                MouseLeftButtonDown="TopPanel_MouseLeftButtonDown">
+                <TextBlock Text="Lumina" Foreground="{StaticResource ForegroundLuminaBrush}" 
+                    VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" 
+                    FontWeight="Bold" FontSize="16" />
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,15,0" VerticalAlignment="Top">
+                    <Grid x:Name="MinimizeButton" Height="35" Width="35" Background="#00000000" 
+                        Margin="0,0,5,0" MouseLeftButtonDown="MinimizeButton_MouseLeftButtonDown">
+                        <Rectangle Fill="{StaticResource ForegroundLuminaBrush}" Margin="5,0" 
+                            VerticalAlignment="Center" Height="2" RadiusY="1" RadiusX="1" Width="15" />
+                    </Grid>
+                    <Grid x:Name="MaximizeButton" Height="35" Width="35" Background="#01000000" 
+                        Margin="0,0,5,0" MouseLeftButtonDown="MaximizeButton_MouseLeftButtonDown">
+                        <Rectangle Stroke="{StaticResource ForegroundLuminaBrush}" Margin="10" 
+                            RadiusY="3.292" RadiusX="3.292" StrokeThickness="2" Height="13" Width="13" />
+                    </Grid>
+                    <Grid x:Name="ExitButton" Height="35" Width="35" Background="#01000000" 
+                        MouseLeftButtonDown="ExitButton_MouseLeftButtonDown">
+                        <Path Data="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z" 
+                            Fill="{StaticResource ForegroundLuminaBrush}" Margin="10" Stretch="Fill" 
+                            Height="13" Width="13" />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Grid Background="{StaticResource BackgroundBrush}" Margin="0,35,0,0">
+            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,2,2,0" VerticalAlignment="Bottom" Margin="0" HorizontalAlignment="Left" Width="200" Height="45">
+                <Grid>
+                    <Image Width="27" Height="27" Name="profilepicture" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Source="/XAMLs/DiscordDefault.png">
+                        <Image.Clip>
+                            <EllipseGeometry Center="13.5,13.5" RadiusX="13.5" RadiusY="13.5" />
+                        </Image.Clip>
+                    </Image>
+                    <TextBlock Name="usernameLabel" Text="Username" Foreground="{StaticResource ForegroundLuminaBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="51,0,0,0" FontSize="16" FontWeight="Bold" />
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,45" HorizontalAlignment="Left" Width="200">
+                <Grid Margin="0"/>
+            </Border>
+        </Grid>
+        <ItemsControl x:Name="NotificationHost" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</Window>
