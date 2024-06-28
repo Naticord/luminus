@@ -8,10 +8,10 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Luminus")]
-[assembly: AssemblyDescription("cool alternative discord client")]
+[assembly: AssemblyDescription("awesome sauce discord client")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Lumina")]
+[assembly: AssemblyProduct("Luminus")]
 [assembly: AssemblyCopyright("Licensed under the Apache License.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

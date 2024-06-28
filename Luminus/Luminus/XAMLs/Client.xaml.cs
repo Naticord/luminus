@@ -1,21 +1,12 @@
-﻿using Lumina.UserControls;
+﻿using Luminus.UserControls;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace Lumina.XAMLs
+namespace Luminus.XAMLs
 {
     /// <summary>
     /// Interaction logic for Client.xaml
@@ -26,7 +17,6 @@ namespace Lumina.XAMLs
         private Login signin;
         private string userPFP;
         private const string DiscordApiBaseUrl = "https://discord.com/api/v9/";
-
 
         public Client(string token, Login signinArg)
         {
@@ -83,10 +73,7 @@ namespace Lumina.XAMLs
                 if (userProfile.global_name != null) { displayname = userProfile.global_name; } else { displayname = userProfile.username; }
                 string bio = userProfile.bio;
                 usernameLabel.Text = displayname;
-                //descriptionLabel.Content = bio;
-
                 string userPFP = $"https://cdn.discordapp.com/avatars/{userProfile.id}/{userProfile.avatar}.png";
-
                 BitmapImage bitmap = new BitmapImage(new Uri(userPFP));
                 profilepicture.Source = bitmap;
             }

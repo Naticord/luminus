@@ -9,12 +9,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using Lumina.UserControls;
-using Lumina.XAMLs;
+using Luminus.UserControls;
+using Luminus.XAMLs;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Lumina.XAMLs
+namespace Luminus.XAMLs
 {
     public partial class Login : Window
     {
@@ -26,7 +26,7 @@ namespace Lumina.XAMLs
             InitializeComponent();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            _token = Luminus.Properties.Settings.Default.Token;
+            _token = Properties.Settings.Default.Token;
             if (!string.IsNullOrEmpty(_token))
             {
                 OpenClient(_token);

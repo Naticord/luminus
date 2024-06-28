@@ -1,11 +1,11 @@
-﻿<Window x:Class="Lumina.Login"
+﻿<Window x:Class="Luminus.XAMLs.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lumina"
+        xmlns:local="clr-namespace:Luminus"
         mc:Ignorable="d"
-        Title="Lumina Login" Height="480" MaxHeight="1054" WindowStyle="None" Icon="/Images/LuminaLogo.png"  
+        Title="Luminus Login" Height="480" MaxHeight="1054" WindowStyle="None" Icon="/Images/LuminaLogo.png"  
         ResizeMode="CanResize" AllowsTransparency="True" WindowStartupLocation="CenterScreen" 
         Width="850" Background="{x:Null}" >
     <Window.Resources>
@@ -61,7 +61,7 @@
         <Grid>
             <Grid x:Name="TopPanel" Background="{StaticResource BackgroundBrush}" 
                 VerticalAlignment="Top" Height="35" MouseLeftButtonDown="TopPanel_MouseLeftButtonDown">
-                <TextBlock Text="Lumina" Foreground="{StaticResource ForegroundLuminaBrush}" 
+                <TextBlock Text="Luminus" Foreground="{StaticResource ForegroundLuminaBrush}" 
                     VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" 
                     FontWeight="Bold" FontSize="16" />
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,15,0" VerticalAlignment="Top">
@@ -87,7 +87,7 @@
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="260" Height="342">
                     <Image Margin="0" Source="/Images/LuminaLogo.png" Stretch="Fill" HorizontalAlignment="Center" Height="157" Width="157" />
-                    <TextBlock Text="Lumina" FontSize="40" Foreground="{StaticResource ForegroundLuminaBrush}" 
+                    <TextBlock Text="Luminus" FontSize="40" Foreground="{StaticResource ForegroundLuminaBrush}" 
                         HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,5" />
                     <Border x:Name="InputUser" CornerRadius="6" Width="165" Height="35" 
                         HorizontalAlignment="Center" Background="{StaticResource InputBackgroundBrush}">
