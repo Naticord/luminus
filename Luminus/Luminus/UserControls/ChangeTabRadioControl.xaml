@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Luminus.UserControls"
              mc:Ignorable="d" 
-             Height="auto" Width="auto" FontWeight="SemiBold">
+             Height="auto" Width="auto" FontWeight="SemiBold" Loaded="root_Loaded" Background="#01000000" Foreground="#01000000">
     <Grid>
-        <TextBlock x:Name="label" Foreground="{StaticResource ForegroundBrush}" Text="{Binding Label, ElementName=root}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,5,10,10"/>
+        <TextBlock x:Name="label" Foreground="{StaticResource ForegroundBrush}" Text="{Binding Label, ElementName=root}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,5,10,10" FontSize="11"/>
         <Rectangle x:Name="ind"  Height="2" Fill="{StaticResource ForegroundBrush}" VerticalAlignment="Bottom" Margin="25,0,25,5" RadiusY="1.062" RadiusX="1.062"/>
     </Grid>
 </UserControl>

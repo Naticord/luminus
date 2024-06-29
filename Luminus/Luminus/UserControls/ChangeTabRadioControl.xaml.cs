@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Luminus.Classes;
 
 namespace Luminus.UserControls
 {
@@ -25,7 +26,6 @@ namespace Luminus.UserControls
         {
             InitializeComponent();
             this.MouseLeftButtonDown += OnMouseLeftButtonDown;
-            UpdateInactive();
         }
 
         public static readonly DependencyProperty IsCheckedProperty =
@@ -77,8 +77,8 @@ namespace Luminus.UserControls
             var brush = (Brush)this.FindResource("ForegroundLuminaBrush");
             label.Foreground = brush;
 
-            label.FontSize = 14;
-            ind.Opacity = 100;
+            Anims.AnimateFontSize(label, 14, new Duration(TimeSpan.FromMilliseconds(200)));
+            Anims.AnimateOpacity(ind, 100, new Duration(TimeSpan.FromMilliseconds(200)));
         }
 
         public void UpdateInactive()
@@ -86,8 +86,18 @@ namespace Luminus.UserControls
             var brush = (Brush)this.FindResource("ForegroundBrush");
             label.Foreground = brush;
 
-            label.FontSize = 11;
-            ind.Opacity = 0;
+            Anims.AnimateFontSize(label, 11, new Duration(TimeSpan.FromMilliseconds(200)));
+            Anims.AnimateOpacity(ind, 0, new Duration(TimeSpan.FromMilliseconds(200)));
+        }
+
+        private void root_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdateInactive();
+
+            if (IsChecked)
+            {
+                UpdateActive();
+            }
         }
     }
 }
