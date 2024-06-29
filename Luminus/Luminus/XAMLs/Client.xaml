@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Luminus.XAMLs"
+        xmlns:local="clr-namespace:Luminus.XAMLs" xmlns:usercontrols="clr-namespace:Luminus.UserControls"
         mc:Ignorable="d"
         Title="Client" WindowStyle="None" MaxHeight="1054" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Height="480" Width="850" Background="{x:Null}">
     <Grid>
@@ -34,7 +34,7 @@
             </Grid>
         </Border>
         <Grid Background="{StaticResource BackgroundBrush}" Margin="0,35,0,0">
-            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,2,2,0" VerticalAlignment="Bottom" Margin="0" HorizontalAlignment="Left" Width="200" Height="45">
+            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,2,2,0" VerticalAlignment="Bottom" Margin="0" HorizontalAlignment="Left" Width="250" Height="45">
                 <Grid>
                     <Image Width="27" Height="27" Name="profilepicture" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Source="/Images/DiscordDefault.png">
                         <Image.Clip>
@@ -44,8 +44,14 @@
                     <TextBlock Name="usernameLabel" Text="Username" Foreground="{StaticResource ForegroundLuminaBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="16" FontWeight="Bold" />
                 </Grid>
             </Border>
-            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,45" HorizontalAlignment="Left" Width="200">
-                <Grid Margin="0"/>
+            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,45" HorizontalAlignment="Left" Width="250">
+                <Grid Margin="0">
+                    <StackPanel VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <usercontrols:ChangeTabRadioControl Label="Direct Messages" IsChecked="False" />
+                        <usercontrols:ChangeTabRadioControl Label="Servers" IsChecked="False" />
+                        <usercontrols:ChangeTabRadioControl Label="Settings" IsChecked="False" />
+                    </StackPanel>
+                </Grid>
             </Border>
         </Grid>
         <ItemsControl x:Name="NotificationHost" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0">

@@ -62,6 +62,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UserControls\ChangeTabRadioControl.xaml.cs">
+      <DependentUpon>ChangeTabRadioControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NotificationControl.xaml.cs">
       <DependentUpon>NotificationControl.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
     <Page Include="Themes\Light.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ChangeTabRadioControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\NotificationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
