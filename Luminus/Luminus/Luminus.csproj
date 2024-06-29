@@ -65,6 +65,9 @@
     <Compile Include="UserControls\ChangeTabRadioControl.xaml.cs">
       <DependentUpon>ChangeTabRadioControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FriendListItem.xaml.cs">
+      <DependentUpon>FriendListItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NotificationControl.xaml.cs">
       <DependentUpon>NotificationControl.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\ChangeTabRadioControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FriendListItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

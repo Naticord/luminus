@@ -1,28 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Luminus.UserControls
 {
-    /// <summary>
-    /// Interaction logic for FriendListItem.xaml
-    /// </summary>
     public partial class FriendListItem : UserControl
     {
         public FriendListItem()
         {
             InitializeComponent();
+        }
+
+        public void SetFriendDetails(string name, string avatarUrl)
+        {
+            usernameLabel.Content = name;
+            if (!string.IsNullOrEmpty(avatarUrl))
+            {
+                try
+                {
+                    BitmapImage bitmap = new BitmapImage(new Uri(avatarUrl));
+                    usernameAvatar.ImageSource = bitmap;
+                }
+                catch (UriFormatException ex)
+                {
+                    Console.WriteLine($"Invalid avatar URL: {avatarUrl}. Exception: {ex.Message}");
+                    usernameAvatar.ImageSource = null;
+                }
+            }
+            else
+            {
+                usernameAvatar.ImageSource = null;
+            }
         }
     }
 }

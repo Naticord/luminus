@@ -51,6 +51,7 @@
                         <usercontrols:ChangeTabRadioControl Label="Servers" IsChecked="False" />
                         <usercontrols:ChangeTabRadioControl Label="Settings" IsChecked="False" />
                     </StackPanel>
+                    <ListBox x:Name="friendsList" HorizontalAlignment="Center" Height="338" VerticalAlignment="Top" Width="212" Margin="0,42,0,0"/>
                 </Grid>
             </Border>
         </Grid>
