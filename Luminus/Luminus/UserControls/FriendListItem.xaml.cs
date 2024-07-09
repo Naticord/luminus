@@ -14,7 +14,13 @@ namespace Luminus.UserControls
 
         public void SetFriendDetails(string name, string avatarUrl)
         {
+            if (name.Length > 20)
+            {
+                name = name.Substring(0, 17) + "...";
+            }
+
             usernameLabel.Content = name;
+
             if (!string.IsNullOrEmpty(avatarUrl))
             {
                 try

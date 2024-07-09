@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Luminus.Classes;
+using System.Windows.Media.Animation;
 
 namespace Luminus.UserControls
 {
@@ -28,8 +18,7 @@ namespace Luminus.UserControls
             this.MouseLeftButtonDown += OnMouseLeftButtonDown;
         }
 
-        public static readonly DependencyProperty IsCheckedProperty =
-    DependencyProperty.Register("IsChecked", typeof(bool), typeof(ChangeTabRadioControl), new PropertyMetadata(false, OnIsCheckedChanged));
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("IsChecked", typeof(bool), typeof(ChangeTabRadioControl), new PropertyMetadata(false, OnIsCheckedChanged));
 
         public bool IsChecked
         {
@@ -37,8 +26,7 @@ namespace Luminus.UserControls
             set { SetValue(IsCheckedProperty, value); }
         }
 
-        public static readonly DependencyProperty LabelProperty =
-            DependencyProperty.Register("Label", typeof(string), typeof(ChangeTabRadioControl), new PropertyMetadata("FUCK"));
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register("Label", typeof(string), typeof(ChangeTabRadioControl), new PropertyMetadata("FUCK"));
 
         public string Label
         {
@@ -49,7 +37,6 @@ namespace Luminus.UserControls
         {
             IsChecked = true;
         }
-
 
         public static void OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -77,8 +64,17 @@ namespace Luminus.UserControls
             var brush = (Brush)this.FindResource("ForegroundLuminaBrush");
             label.Foreground = brush;
 
-            Anims.AnimateFontSize(label, 14, new Duration(TimeSpan.FromMilliseconds(200)));
-            Anims.AnimateOpacity(ind, 100, new Duration(TimeSpan.FromMilliseconds(200)));
+            DoubleAnimation fontSizeAnimation = new DoubleAnimation();
+            fontSizeAnimation.To = 14;
+            fontSizeAnimation.Duration = TimeSpan.FromMilliseconds(400);
+            fontSizeAnimation.EasingFunction = new CubicEase() { EasingMode = EasingMode.EaseOut };
+            label.BeginAnimation(TextBlock.FontSizeProperty, fontSizeAnimation);
+
+            DoubleAnimation opacityAnimation = new DoubleAnimation();
+            opacityAnimation.To = 1;
+            opacityAnimation.Duration = TimeSpan.FromMilliseconds(400);
+            opacityAnimation.EasingFunction = new CubicEase() { EasingMode = EasingMode.EaseOut };
+            ind.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
         }
 
         public void UpdateInactive()
@@ -86,8 +82,17 @@ namespace Luminus.UserControls
             var brush = (Brush)this.FindResource("ForegroundBrush");
             label.Foreground = brush;
 
-            Anims.AnimateFontSize(label, 11, new Duration(TimeSpan.FromMilliseconds(200)));
-            Anims.AnimateOpacity(ind, 0, new Duration(TimeSpan.FromMilliseconds(200)));
+            DoubleAnimation fontSizeAnimation = new DoubleAnimation();
+            fontSizeAnimation.To = 11;
+            fontSizeAnimation.Duration = TimeSpan.FromMilliseconds(400);
+            fontSizeAnimation.EasingFunction = new CubicEase() { EasingMode = EasingMode.EaseOut };
+            label.BeginAnimation(TextBlock.FontSizeProperty, fontSizeAnimation);
+
+            DoubleAnimation opacityAnimation = new DoubleAnimation();
+            opacityAnimation.To = 0;
+            opacityAnimation.Duration = TimeSpan.FromMilliseconds(400);
+            opacityAnimation.EasingFunction = new CubicEase() { EasingMode = EasingMode.EaseOut };
+            ind.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
         }
 
         private void root_Loaded(object sender, RoutedEventArgs e)

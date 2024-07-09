@@ -47,11 +47,11 @@
             <Border Background="{StaticResource BackgroundBrush}" BorderBrush="{DynamicResource InputBackgroundBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,45" HorizontalAlignment="Left" Width="250">
                 <Grid Margin="0">
                     <StackPanel VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,7,0,0">
-                        <usercontrols:ChangeTabRadioControl x:Name="GotoDMS" Label="Direct Messages" IsChecked="True" />
-                        <usercontrols:ChangeTabRadioControl x:Name="GotoServers" Label="Servers" IsChecked="False" />
-                        <usercontrols:ChangeTabRadioControl x:Name="GotoSettings" Label="Settings" IsChecked="False" />
+                        <usercontrols:ChangeTabRadioControl x:Name="GotoDMS" Label="Direct Messages" IsChecked="True" Width="{Binding ActualWidth, ElementName=DirectMessagesLabel}" />
+                        <usercontrols:ChangeTabRadioControl x:Name="GotoServers" Label="Servers" IsChecked="False" Width="{Binding ActualWidth, ElementName=ServersLabel}" />
+                        <usercontrols:ChangeTabRadioControl x:Name="GotoSettings" Label="Settings" IsChecked="False" Width="{Binding ElementName=SettingsLabel, Path=ActualWidth}" />
                     </StackPanel>
-                    <ListBox  x:Name="friendsList" HorizontalAlignment="Center" Height="338" VerticalAlignment="Top" Width="212" Margin="0,42,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <ListBox  x:Name="friendsList" HorizontalAlignment="Center" Height="338" VerticalAlignment="Top" Width="212" Margin="0,42,0,0" BorderBrush="{x:Null}" Background="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     </ListBox>
                 </Grid>
             </Border>

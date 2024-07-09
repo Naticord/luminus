@@ -4,15 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Luminus.UserControls"
-             mc:Ignorable="d" d:DesignWidth="340" Height="32.75">
+             mc:Ignorable="d" d:DesignWidth="150" Height="32.75">
     <Border Margin="5,2.5">
         <Grid>
-            <Ellipse Width="27" Height="27" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+            <Ellipse Width="27" Height="27" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,0,0,0">
                 <Ellipse.Fill>
                     <ImageBrush x:Name="usernameAvatar" />
                 </Ellipse.Fill>
             </Ellipse>
-            <Label x:Name="usernameLabel" Content="Label" HorizontalAlignment="Left" Margin="60,0,0,0" VerticalAlignment="Center"/>
+            <Label x:Name="usernameLabel" Content="Label" HorizontalAlignment="Left" Margin="32,0,0,0" VerticalAlignment="Center"/>
         </Grid>
     </Border>
 </UserControl>
